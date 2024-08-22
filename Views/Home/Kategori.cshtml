@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Kategori";
+}
+@model IEnumerable<Kategori>
+
+    <a asp-action="KategoriAdd" class="btn btn-outline-primary mb-2">Kategori Ekle</a>
+
+    <div
+        class="table-responsive-lg"
+    >
+        <table
+            class="table table-striped-columns table-hover table-borderless table-primary align-middle"
+        >
+            <thead class="table-light">
+                <caption>
+                    Kategoriler
+                </caption>
+                <tr>
+                    <th>Kategori Adı</th>
+                    <th>Sil</th>
+                    <th>Düzenle</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                @foreach (var kategori in Model)
+                {
+              <tr
+                    class="table-primary"
+                >
+                    <td scope="row">@kategori.Name</td>
+                    
+
+                    <td><a href="/Home/KategoriDelete/@kategori.Id" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Home/KategoriEdit/@kategori.Id" class="btn btn-outline-secondary">Düzenle</a></td>
+
+                </tr>
+                    
+                }
+ 
+
+            </tbody>
+            <tfoot>
+                
+            </tfoot>
+        </table>
+    </div>
+    

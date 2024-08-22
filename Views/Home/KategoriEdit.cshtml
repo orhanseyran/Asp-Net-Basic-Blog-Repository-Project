@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "KategoriAdd";
+}
+@model Kategori;
+
+<form action="/Home/KategoriEdit/@Model.Id" method="POST">
+    <div class="mb-3">
+        <label for="" class="form-label">Kategori Adı</label>
+        <input asp-for="Name" type="text" class="form-control" placeholder="">
+
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+
+<div class="row">
+
+    <td scope="row">@Model.Blog.KategoriName</td>
+</div>
